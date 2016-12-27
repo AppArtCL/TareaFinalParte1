@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6z1-H1-aWG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,399 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Iu-SC-A26">
+                                <rect key="frame" x="41" y="114" width="110" height="110"/>
+                                <color key="backgroundColor" red="0.0" green="0.060632389039999998" blue="0.51891559359999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="VYl-QL-zvX"/>
+                                    <constraint firstAttribute="width" secondItem="6Iu-SC-A26" secondAttribute="height" multiplier="1:1" id="rWE-Wp-uJG"/>
+                                    <constraint firstAttribute="width" constant="110" id="zhR-UB-UMO"/>
+                                </constraints>
+                                <state key="normal" title="Rutas">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Uhe-Gy-s7N" kind="show" id="dsw-wo-DEK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITN-Ol-9vu">
+                                <rect key="frame" x="224" y="114" width="110" height="110"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.032542228700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Fsf-o8-6LD"/>
+                                    <constraint firstAttribute="width" secondItem="ITN-Ol-9vu" secondAttribute="height" multiplier="1:1" id="a3d-2S-XEg"/>
+                                    <constraint firstAttribute="height" constant="110" id="oPL-qJ-1kO"/>
+                                </constraints>
+                                <state key="normal" title="Códigos QR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1Yo-bh-rfu" kind="show" id="tmm-TN-GMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ITN-Ol-9vu" secondAttribute="trailing" constant="25" id="0zo-ah-tpN"/>
+                            <constraint firstItem="6Iu-SC-A26" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="H26-wk-fea"/>
+                            <constraint firstItem="6Iu-SC-A26" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="MSJ-G0-5rO"/>
+                            <constraint firstItem="ITN-Ol-9vu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="Q24-5U-iFn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="wuu-cU-mgU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="919.20000000000005" y="136.28185907046478"/>
+        </scene>
+        <!--Scan QR-->
+        <scene sceneID="hbe-2b-tuy">
+            <objects>
+                <viewController title="Scan QR" id="1Yo-bh-rfu" customClass="QRViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Icq-lG-BLs"/>
+                        <viewControllerLayoutGuide type="bottom" id="LpM-W9-AFR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7jT-gP-fbY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="C5C-oK-CQH" kind="show" identifier="MuestraWeb" id="ICG-WH-RSd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Trm-Lp-JK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="508"/>
+        </scene>
+        <!--Web QR-->
+        <scene sceneID="RUQ-Cc-z6j">
+            <objects>
+                <viewController title="Web QR" id="C5C-oK-CQH" customClass="WebViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cjM-m5-jnJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lsp-EU-KEl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tDj-wt-Tgn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-1P-RIZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zFB-1P-RIZ" firstAttribute="top" secondItem="tDj-wt-Tgn" secondAttribute="top" id="6U6-dk-RWo"/>
+                            <constraint firstItem="zFB-1P-RIZ" firstAttribute="leading" secondItem="tDj-wt-Tgn" secondAttribute="leading" id="8XP-BF-iBV"/>
+                            <constraint firstAttribute="trailing" secondItem="zFB-1P-RIZ" secondAttribute="trailing" id="Fh1-Qr-H6k"/>
+                            <constraint firstItem="Lsp-EU-KEl" firstAttribute="top" secondItem="zFB-1P-RIZ" secondAttribute="bottom" id="Kho-Sd-WDn"/>
+                            <constraint firstAttribute="trailing" secondItem="zFB-1P-RIZ" secondAttribute="trailing" id="ddN-Vw-ShX"/>
+                            <constraint firstItem="zFB-1P-RIZ" firstAttribute="leading" secondItem="tDj-wt-Tgn" secondAttribute="leading" id="gaJ-Qv-2JZ"/>
+                            <constraint firstItem="Lsp-EU-KEl" firstAttribute="top" secondItem="zFB-1P-RIZ" secondAttribute="bottom" id="o53-M3-lrB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="visorWeb" destination="zFB-1P-RIZ" id="ush-2I-2c7"/>
+                        <segue destination="6z1-H1-aWG" kind="show" identifier="IrAlHome" id="y1d-a8-uO2"/>
+                        <segue destination="Oh0-51-ohO" kind="unwind" identifier="UnwindToMapa" unwindAction="unwindToMapaWithSegue:" id="IQ2-y8-msv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="erg-UQ-d5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Oh0-51-ohO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2664.8000000000002" y="507.79610194902551"/>
+        </scene>
+        <!--Rutas-->
+        <scene sceneID="WlB-U1-Lm2">
+            <objects>
+                <viewController title="Rutas" id="Uhe-Gy-s7N" customClass="RutasViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Klv-y6-QwA"/>
+                        <viewControllerLayoutGuide type="bottom" id="R07-Gh-68g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p89-Et-SXt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-jr-24q">
+                                <rect key="frame" x="36" y="113.5" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-9Y-SWn">
+                                <rect key="frame" x="36" y="183" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de la ruta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7A-cr-aEc">
+                                <rect key="frame" x="119" y="90" width="137.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-Ro-Y2o">
+                                <rect key="frame" x="142" y="160.5" width="91.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuQ-bL-S76">
+                                <rect key="frame" x="66.5" y="234" width="242" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Seleccionar fotografía existente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="abrirBibliotecaImagenes:" destination="Uhe-Gy-s7N" eventType="touchUpInside" id="74I-hk-bWx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-VB-OQk">
+                                <rect key="frame" x="132.5" y="504" width="110" height="110"/>
+                                <color key="backgroundColor" red="0.0" green="0.060632389039999998" blue="0.51891559359999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Czp-vj-MAH"/>
+                                    <constraint firstAttribute="width" secondItem="7PA-VB-OQk" secondAttribute="height" multiplier="1:1" id="MZL-nS-ah4"/>
+                                    <constraint firstAttribute="width" constant="110" id="adq-wE-HvU"/>
+                                </constraints>
+                                <state key="normal" title="Crear Ruta">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="abrirMapas:" destination="Uhe-Gy-s7N" eventType="touchUpInside" id="DJU-Gy-hek"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-Tz-1iE">
+                                <rect key="frame" x="36" y="313" width="303" height="175"/>
+                                <color key="backgroundColor" white="0.73415446279999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QC2-Tz-1iE" secondAttribute="height" multiplier="303:175" id="URf-Nu-pLI"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaf-UZ-Tsc">
+                                <rect key="frame" x="99" y="275" width="177" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Tomar nueva fotografía">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tomarFotografia:" destination="Uhe-Gy-s7N" eventType="touchUpInside" id="9LO-hY-XYx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="c1K-jr-24q" secondAttribute="trailing" constant="20" id="4Tx-aD-yLW"/>
+                            <constraint firstItem="eaf-UZ-Tsc" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="6OH-ZM-pFe"/>
+                            <constraint firstItem="FuQ-bL-S76" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="ApJ-jp-fg2"/>
+                            <constraint firstItem="QC2-Tz-1iE" firstAttribute="leading" secondItem="p89-Et-SXt" secondAttribute="leadingMargin" constant="20" id="DWH-yB-d0K"/>
+                            <constraint firstItem="7PA-VB-OQk" firstAttribute="top" secondItem="QC2-Tz-1iE" secondAttribute="bottom" constant="16" id="IH9-Pt-tMt"/>
+                            <constraint firstItem="c1K-jr-24q" firstAttribute="leading" secondItem="p89-Et-SXt" secondAttribute="leadingMargin" constant="20" id="IVm-gk-0oj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QC2-Tz-1iE" secondAttribute="trailing" constant="20" id="P3e-Ti-w6q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xpV-9Y-SWn" secondAttribute="trailing" constant="20" id="TeX-Vd-nZh"/>
+                            <constraint firstItem="i7A-cr-aEc" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="UvC-sn-cqf"/>
+                            <constraint firstItem="6l8-Ro-Y2o" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="XLn-o1-weh"/>
+                            <constraint firstItem="7PA-VB-OQk" firstAttribute="top" secondItem="QC2-Tz-1iE" secondAttribute="bottom" constant="16" id="Z4G-2f-5tG"/>
+                            <constraint firstItem="eaf-UZ-Tsc" firstAttribute="top" secondItem="FuQ-bL-S76" secondAttribute="bottom" constant="8" id="b36-fd-qMZ"/>
+                            <constraint firstItem="xpV-9Y-SWn" firstAttribute="top" secondItem="6l8-Ro-Y2o" secondAttribute="bottom" constant="2" id="cHH-Sr-eiD"/>
+                            <constraint firstItem="c1K-jr-24q" firstAttribute="top" secondItem="i7A-cr-aEc" secondAttribute="bottom" constant="3" id="gHC-Ck-ska"/>
+                            <constraint firstItem="c1K-jr-24q" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="m5d-x9-8IZ"/>
+                            <constraint firstItem="i7A-cr-aEc" firstAttribute="top" secondItem="Klv-y6-QwA" secondAttribute="bottom" constant="26" id="nUA-sA-qUb"/>
+                            <constraint firstItem="7PA-VB-OQk" firstAttribute="centerX" secondItem="p89-Et-SXt" secondAttribute="centerX" id="nUD-gu-LjX"/>
+                            <constraint firstItem="xpV-9Y-SWn" firstAttribute="leading" secondItem="p89-Et-SXt" secondAttribute="leadingMargin" constant="20" id="u9z-Rl-ti1"/>
+                            <constraint firstItem="QC2-Tz-1iE" firstAttribute="top" secondItem="eaf-UZ-Tsc" secondAttribute="bottom" constant="5" id="ue5-Ck-qnh"/>
+                            <constraint firstItem="FuQ-bL-S76" firstAttribute="top" secondItem="xpV-9Y-SWn" secondAttribute="bottom" constant="21" id="wF8-42-SQi"/>
+                            <constraint firstItem="6l8-Ro-Y2o" firstAttribute="top" secondItem="c1K-jr-24q" secondAttribute="bottom" constant="17" id="x9f-bN-Rpj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="botonAbrirBibliotecaImagenes" destination="FuQ-bL-S76" id="mqW-NW-mcq"/>
+                        <outlet property="botonTomarFotografia" destination="eaf-UZ-Tsc" id="zeu-Mi-wVj"/>
+                        <outlet property="descripcionRuta" destination="xpV-9Y-SWn" id="aGO-r4-35T"/>
+                        <outlet property="imagenRuta" destination="QC2-Tz-1iE" id="KEp-Lu-gKe"/>
+                        <outlet property="nombreRuta" destination="c1K-jr-24q" id="9Aj-Vj-upv"/>
+                        <segue destination="iY4-HM-tEW" kind="show" identifier="MuestraMapa" id="Z3p-Ee-y0k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Urn-bX-dSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816.8" y="-278.41079460269867"/>
+        </scene>
+        <!--Mapas-->
+        <scene sceneID="Xm5-sg-RxX">
+            <objects>
+                <viewController title="Mapas" id="iY4-HM-tEW" customClass="MapaViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ThM-4v-hFz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ms0-yU-5H4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E5B-t8-GYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TCQ-9l-8fG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20y-Zc-gmj">
+                                <rect key="frame" x="249" y="617" width="110" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.060632389039999998" blue="0.51891559359999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Kg-rA-4NT"/>
+                                    <constraint firstAttribute="width" constant="110" id="6oM-xT-jAx"/>
+                                    <constraint firstAttribute="width" secondItem="20y-Zc-gmj" secondAttribute="height" multiplier="11:3" id="kmO-qy-t72"/>
+                                </constraints>
+                                <state key="normal" title="Fotografía">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="I52-vu-tQM" kind="show" id="ep9-70-TbV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-Hh-8I7">
+                                <rect key="frame" x="119" y="617" width="110" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.032542228700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HFO-Hh-8I7" secondAttribute="height" multiplier="11:3" id="CUQ-oZ-3VD"/>
+                                    <constraint firstAttribute="height" constant="30" id="K66-dE-4X6"/>
+                                    <constraint firstAttribute="width" constant="110" id="qly-gG-fVU"/>
+                                </constraints>
+                                <state key="normal" title="Código QR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="capturarCodigoQR:" destination="iY4-HM-tEW" eventType="touchUpInside" id="Bje-ES-uVm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-km-gC1">
+                                <rect key="frame" x="249" y="579" width="110" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="7CN-Zb-nn1"/>
+                                    <constraint firstAttribute="width" secondItem="Gfg-km-gC1" secondAttribute="height" multiplier="11:3" id="nDF-3S-qFi"/>
+                                    <constraint firstAttribute="height" constant="30" id="osW-Pg-fM7"/>
+                                </constraints>
+                                <state key="normal" title="Crear Punto">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="crearPunto:" destination="iY4-HM-tEW" eventType="touchUpInside" id="SIV-oS-Z2H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="20y-Zc-gmj" firstAttribute="trailing" secondItem="E5B-t8-GYZ" secondAttribute="trailingMargin" id="23C-yA-eqe"/>
+                            <constraint firstItem="TCQ-9l-8fG" firstAttribute="centerY" secondItem="E5B-t8-GYZ" secondAttribute="centerY" constant="32" id="2w7-jv-suK"/>
+                            <constraint firstItem="ms0-yU-5H4" firstAttribute="top" secondItem="HFO-Hh-8I7" secondAttribute="bottom" constant="20" id="5Be-c8-El7"/>
+                            <constraint firstItem="TCQ-9l-8fG" firstAttribute="top" secondItem="ThM-4v-hFz" secondAttribute="bottom" id="G2M-ni-cEh"/>
+                            <constraint firstItem="20y-Zc-gmj" firstAttribute="top" secondItem="Gfg-km-gC1" secondAttribute="bottom" constant="8" id="Ibe-fv-SJR"/>
+                            <constraint firstItem="ms0-yU-5H4" firstAttribute="top" secondItem="20y-Zc-gmj" secondAttribute="bottom" constant="20" id="Qry-li-z7B"/>
+                            <constraint firstItem="TCQ-9l-8fG" firstAttribute="trailing" secondItem="E5B-t8-GYZ" secondAttribute="trailingMargin" constant="16" id="bHc-9G-BDN"/>
+                            <constraint firstItem="TCQ-9l-8fG" firstAttribute="centerX" secondItem="E5B-t8-GYZ" secondAttribute="centerX" id="hgu-6B-fQu"/>
+                            <constraint firstItem="20y-Zc-gmj" firstAttribute="leading" secondItem="HFO-Hh-8I7" secondAttribute="trailing" constant="20" id="nFS-LC-6uz"/>
+                            <constraint firstItem="Gfg-km-gC1" firstAttribute="trailing" secondItem="E5B-t8-GYZ" secondAttribute="trailingMargin" id="nNp-gF-dAU"/>
+                            <constraint firstItem="TCQ-9l-8fG" firstAttribute="leading" secondItem="E5B-t8-GYZ" secondAttribute="leadingMargin" constant="-16" id="uN0-nv-sep"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapa" destination="TCQ-9l-8fG" id="IPH-7t-LtD"/>
+                        <segue destination="1Yo-bh-rfu" kind="show" identifier="IrAQR" id="Px7-CI-3Ad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3D-ob-w3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2664.8000000000002" y="-278.41079460269867"/>
+        </scene>
+        <!--Foto View Controller-->
+        <scene sceneID="v90-bR-gMn">
+            <objects>
+                <viewController id="I52-vu-tQM" customClass="FotoViewController" customModule="TareaRutaFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tMI-BF-4Sy"/>
+                        <viewControllerLayoutGuide type="bottom" id="uOV-GL-qfL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bps-u8-sqW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uys-yk-n4J">
+                                <rect key="frame" x="66" y="126" width="242" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Seleccionar fotografía existente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="abrirBiblioImagenes:" destination="I52-vu-tQM" eventType="touchUpInside" id="IJu-Ax-Hyk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-g1-54f">
+                                <rect key="frame" x="99" y="181" width="177" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="aGY-85-tFx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Tomar nueva fotografía">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tomarFotoPunto:" destination="I52-vu-tQM" eventType="touchUpInside" id="Y15-9X-5dZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Gd-Tr-vGa">
+                                <rect key="frame" x="16" y="280" width="343" height="274"/>
+                                <color key="backgroundColor" white="0.73415446279999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Gd-Tr-vGa" secondAttribute="height" multiplier="343:274" id="fig-XA-Njz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Gd-Tr-vGa" firstAttribute="centerX" secondItem="bps-u8-sqW" secondAttribute="centerX" id="1QX-M9-D1k"/>
+                            <constraint firstItem="0aQ-g1-54f" firstAttribute="centerX" secondItem="bps-u8-sqW" secondAttribute="centerX" id="A6r-eF-wnW"/>
+                            <constraint firstItem="uys-yk-n4J" firstAttribute="centerX" secondItem="bps-u8-sqW" secondAttribute="centerX" id="RME-2c-4rU"/>
+                            <constraint firstItem="uys-yk-n4J" firstAttribute="top" secondItem="tMI-BF-4Sy" secondAttribute="bottom" constant="62" id="SzF-RR-d14"/>
+                            <constraint firstItem="0Gd-Tr-vGa" firstAttribute="leading" secondItem="bps-u8-sqW" secondAttribute="leadingMargin" id="TwO-pM-0rR"/>
+                            <constraint firstItem="uOV-GL-qfL" firstAttribute="top" secondItem="0Gd-Tr-vGa" secondAttribute="bottom" constant="113" id="iz9-mf-Dt5"/>
+                            <constraint firstItem="0aQ-g1-54f" firstAttribute="top" secondItem="uys-yk-n4J" secondAttribute="bottom" constant="22" id="oOj-fk-lcL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="botonAbrirBiblioImagenes" destination="uys-yk-n4J" id="MCz-3N-pIF"/>
+                        <outlet property="botonTomarFotoPunto" destination="0aQ-g1-54f" id="guz-fg-Kfu"/>
+                        <outlet property="imagenPunto" destination="0Gd-Tr-vGa" id="Ey3-fR-VwO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UeO-4z-q9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3628" y="-278.41079460269867"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qNI-36-bEp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6z1-H1-aWG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pPd-h6-eAv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="S04-pF-brK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Gq-fd-gDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="137"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Px7-CI-3Ad"/>
+    </inferredMetricsTieBreakers>
 </document>

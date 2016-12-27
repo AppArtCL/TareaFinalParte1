@@ -20,6 +20,11 @@
 		625F008F1D9B678B00F55965 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625F008E1D9B678B00F55965 /* ExtensionDelegate.swift */; };
 		625F00911D9B678B00F55965 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625F00901D9B678B00F55965 /* NotificationController.swift */; };
 		625F00931D9B678B00F55965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625F00921D9B678B00F55965 /* Assets.xcassets */; };
+		625F00A31D9B72E000F55965 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625F00A21D9B72E000F55965 /* QRViewController.swift */; };
+		625F00A51D9B737100F55965 /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625F00A41D9B737100F55965 /* RutasViewController.swift */; };
+		625F00A71D9B783200F55965 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625F00A61D9B783200F55965 /* WebViewController.swift */; };
+		626C594C1DA0AC5E00FABD47 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C594B1DA0AC5E00FABD47 /* MapaViewController.swift */; };
+		627AB8701E1211CD006DABEF /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627AB86F1E1211CD006DABEF /* FotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,11 @@
 		625F00901D9B678B00F55965 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		625F00921D9B678B00F55965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		625F00941D9B678B00F55965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		625F00A21D9B72E000F55965 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		625F00A41D9B737100F55965 /* RutasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RutasViewController.swift; sourceTree = "<group>"; };
+		625F00A61D9B783200F55965 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		626C594B1DA0AC5E00FABD47 /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		627AB86F1E1211CD006DABEF /* FotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +138,8 @@
 			children = (
 				625F00671D9B678B00F55965 /* AppDelegate.swift */,
 				625F00691D9B678B00F55965 /* ViewController.swift */,
+				626C594A1DA09BEE00FABD47 /* Mapas */,
+				626C59491DA09BDA00FABD47 /* QR Code */,
 				625F006B1D9B678B00F55965 /* Main.storyboard */,
 				625F006E1D9B678B00F55965 /* Assets.xcassets */,
 				625F00701D9B678B00F55965 /* LaunchScreen.storyboard */,
@@ -165,6 +177,25 @@
 				625F008B1D9B678B00F55965 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		626C59491DA09BDA00FABD47 /* QR Code */ = {
+			isa = PBXGroup;
+			children = (
+				625F00A21D9B72E000F55965 /* QRViewController.swift */,
+				625F00A61D9B783200F55965 /* WebViewController.swift */,
+			);
+			name = "QR Code";
+			sourceTree = "<group>";
+		};
+		626C594A1DA09BEE00FABD47 /* Mapas */ = {
+			isa = PBXGroup;
+			children = (
+				625F00A41D9B737100F55965 /* RutasViewController.swift */,
+				626C594B1DA0AC5E00FABD47 /* MapaViewController.swift */,
+				627AB86F1E1211CD006DABEF /* FotoViewController.swift */,
+			);
+			name = Mapas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +261,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = AppArt;
 				TargetAttributes = {
 					625F00631D9B678A00F55965 = {
@@ -306,7 +337,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				625F006A1D9B678B00F55965 /* ViewController.swift in Sources */,
+				627AB8701E1211CD006DABEF /* FotoViewController.swift in Sources */,
+				626C594C1DA0AC5E00FABD47 /* MapaViewController.swift in Sources */,
 				625F00681D9B678B00F55965 /* AppDelegate.swift in Sources */,
+				625F00A51D9B737100F55965 /* RutasViewController.swift in Sources */,
+				625F00A71D9B783200F55965 /* WebViewController.swift in Sources */,
+				625F00A31D9B72E000F55965 /* QRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +417,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -430,6 +467,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -569,6 +607,7 @@
 				625F00991D9B678B00F55965 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		625F009B1D9B678B00F55965 /* Build configuration list for PBXNativeTarget "TareaRutaFinal WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +616,7 @@
 				625F009D1D9B678B00F55965 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		625F009F1D9B678B00F55965 /* Build configuration list for PBXNativeTarget "TareaRutaFinal" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +625,7 @@
 				625F00A11D9B678B00F55965 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

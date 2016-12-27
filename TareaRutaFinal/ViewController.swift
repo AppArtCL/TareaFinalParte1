@@ -8,11 +8,26 @@
 
 import UIKit
 
+var ultimaPantalla = "Home"
+var ruta = ""
+var descripcion = ""
+
 class ViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        ultimaPantalla = "Home"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        print(ultimaPantalla)
+        print("ViewController Home")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +35,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+
+    }
 
 }
-
