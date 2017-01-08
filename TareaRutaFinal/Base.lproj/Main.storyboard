@@ -306,6 +306,19 @@
                                     <action selector="crearPunto:" destination="iY4-HM-tEW" eventType="touchUpInside" id="SIV-oS-Z2H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-Io-dT4">
+                                <rect key="frame" x="119" y="579" width="110" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Bol-wd-aIj"/>
+                                    <constraint firstAttribute="height" constant="30" id="H1t-zm-7Yd"/>
+                                    <constraint firstAttribute="width" secondItem="tIc-Io-dT4" secondAttribute="height" multiplier="11:3" id="adK-Gj-uvR"/>
+                                </constraints>
+                                <state key="normal" title="Mostrar Ruta"/>
+                                <connections>
+                                    <action selector="mostrarRuta:" destination="iY4-HM-tEW" eventType="touchUpInside" id="gbV-aK-PsW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -320,6 +333,8 @@
                             <constraint firstItem="20y-Zc-gmj" firstAttribute="leading" secondItem="HFO-Hh-8I7" secondAttribute="trailing" constant="20" id="nFS-LC-6uz"/>
                             <constraint firstItem="Gfg-km-gC1" firstAttribute="trailing" secondItem="E5B-t8-GYZ" secondAttribute="trailingMargin" id="nNp-gF-dAU"/>
                             <constraint firstItem="TCQ-9l-8fG" firstAttribute="leading" secondItem="E5B-t8-GYZ" secondAttribute="leadingMargin" constant="-16" id="uN0-nv-sep"/>
+                            <constraint firstItem="HFO-Hh-8I7" firstAttribute="top" secondItem="tIc-Io-dT4" secondAttribute="bottom" constant="8" id="yUF-UY-Qmt"/>
+                            <constraint firstItem="Gfg-km-gC1" firstAttribute="leading" secondItem="tIc-Io-dT4" secondAttribute="trailing" constant="20" id="zc1-5G-sDz"/>
                         </constraints>
                     </view>
                     <connections>

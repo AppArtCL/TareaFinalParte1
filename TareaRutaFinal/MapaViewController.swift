@@ -18,6 +18,7 @@ class MapaViewController: ViewController, MKMapViewDelegate, CLLocationManagerDe
     var ultimaUbicacion: CLLocation?    // Registra la ultima ubicacion centrada
     var ultimoPunto: MKMapItem?         // Registra el ultimo punto con PIN
     var nombreUltimoPunto = "Punto Inicial" // Registra el nombre del ultimo punto con PIN
+    var listaPuntos: [MKMapItem] = []
 
 
     // MARK: - Conexiones
@@ -28,6 +29,27 @@ class MapaViewController: ViewController, MKMapViewDelegate, CLLocationManagerDe
         self.performSegue(withIdentifier: "IrAQR", sender: self)
         
     }
+    
+    // Muestra la ruta en el mapa
+    @IBAction func mostrarRuta(_ sender: Any) {
+        // Revisar si hay puntos para la ruta
+        if listaPuntos.count < 2 {
+            // Entrego mensaje que no se puede crear ruta con un punto
+            let avisoPuntos = UIAlertController(title: "Importante", message: "Deben existir al menos dos puntos para crear una ruta. Usted sólo ha creado uno.", preferredStyle: UIAlertControllerStyle.alert)
+            avisoPuntos.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(avisoPuntos, animated: true, completion: nil)
+        } else {
+            // Muestro la ruta con a lo menos dos puntos
+            var iPuntos = 1
+            while iPuntos < self.listaPuntos.count {
+                let origenTemporal = listaPuntos[iPuntos-1]
+                let destinoTemporal = listaPuntos[iPuntos]
+                crearRuta(origen: origenTemporal, destino: destinoTemporal)
+                iPuntos = iPuntos + 1
+            }
+        }
+    }
+    
     
     // Abre ventana para tomar fotografía
     @IBAction func tomaFotografia(_ sender: AnyObject) {
@@ -77,9 +99,13 @@ class MapaViewController: ViewController, MKMapViewDelegate, CLLocationManagerDe
         punto.title = String(nombre)
         self.mapa.addAnnotation(punto)
         
+        // Agrego al arreglo
+        let puntoTemporal = MKMapItem(placemark: MKPlacemark(coordinate: punto.coordinate, addressDictionary: nil))
+        self.listaPuntos.append(puntoTemporal)
+        
         // Crea ruta
         let destino = MKMapItem(placemark: MKPlacemark(coordinate: punto.coordinate, addressDictionary: nil))
-        crearRuta(origen: self.ultimoPunto!, destino: destino)
+//        crearRuta(origen: self.ultimoPunto!, destino: destino)
         
         // Actualizo el ultimoPunto
         self.ultimoPunto = destino
@@ -149,6 +175,9 @@ class MapaViewController: ViewController, MKMapViewDelegate, CLLocationManagerDe
             chinche.title = "Punto Inicial"
             chinche.coordinate = puntoInicial!.coordinate
             self.mapa.addAnnotation(chinche)
+            // Lo agrego a la lista
+            let primero = MKMapItem(placemark: MKPlacemark(coordinate: self.puntoInicial!.coordinate, addressDictionary: nil))
+            self.listaPuntos.append(primero)
             
             // Centrar el mapa y definir región
             self.mapa.setCenter(self.puntoInicial!.coordinate, animated: true)

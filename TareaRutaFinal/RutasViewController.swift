@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RutasViewController: ViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RutasViewController: ViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - Variables
     var nombreNuevaRuta = ""
     
@@ -99,11 +99,18 @@ class RutasViewController: ViewController, UIImagePickerControllerDelegate, UINa
 
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.descripcionRuta.resignFirstResponder()
+        self.nombreRuta.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        // Configuro para que desaparezcan al apretar el Enter
+        self.descripcionRuta.delegate = self
+        self.nombreRuta.delegate = self    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
